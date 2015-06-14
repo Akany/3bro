@@ -18,4 +18,4 @@ gulp.task('install', function() {
 
 gulp.task('start', function () {
 	exec('npm start');
-})
+});
