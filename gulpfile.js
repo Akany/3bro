@@ -11,8 +11,12 @@ gulp.task('install', function() {
   		console.log('npm isntall erorr');
   	}
 
-  	gulp.src('node_modules/angular/angular.js')
-		.pipe(gulp.dest('public/javascripts/vendor/'));
+  	gulp.src([
+  		'node_modules/angular/*',
+  		'node_modules/bootstrap/**/*',
+  		'node_modules/jquery/**/*'
+  	], {base: 'node_modules'})
+		.pipe(gulp.dest('public/javascripts/vendor'));
   });
 });
 
