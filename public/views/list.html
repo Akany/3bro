@@ -1,0 +1,17 @@
+<div class="container">
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Category</th>
+				<th>Coast</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in listCtrl.items">
+				<td>{{ item.category }}</td>
+				<td>{{ item.coast }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn btn-default" ng-click="listCtrl.toAdd()">Add item</button>
+</div>

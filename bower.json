@@ -1,0 +1,24 @@
+{
+  "name": "3bro",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Akany/3bro",
+  "authors": [
+    "akany <sif.mori@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "directory": "public/javascripts/vendor",
+  "dependencies": {
+    "angular-route": "~1.4.2",
+    "bootstrap": "~3.3.5",
+    "requirejs": "~2.1.18",
+    "angular": "~1.4.2",
+    "require-css": "~0.1.8"
+  }
+}

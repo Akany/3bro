@@ -1,0 +1,15 @@
+<div class="container">
+	<form name="addForm">
+		<div class="form-group">
+			<label>Category</label>
+			<select class="form-control" ng-options="category.value as category.name for category in addCtrl.categories" ng-model="addCtrl.category" required></select>
+		</div>
+		<div class="form-group">
+			<label>Coast</label>
+			<input type="number" class="form-control" ng-model="addCtrl.coast" required>
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="addCtrl.add()" ng-disabled="addForm.$invalid || addForm.$pristine">
+			Add
+		</button>
+	</form>
+</div>

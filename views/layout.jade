@@ -2,7 +2,7 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/vendor/angular.js')
-  body
+    script(src='/javascripts/vendor/requirejs/require.js', data-main="javascripts/main")
+    base(href='/')
+  body(ng-view)
     block content
