@@ -3,11 +3,11 @@ var express = require('express'),
 	User = require('../schema/user');
 
 router.put('/', function(req, res, next) {
-	User.find({
-		email: req.body.email,
-		password: req.body.password
-	}, function (error, users) {
-		if (users.length) {
+	User.findOne({
+			email: req.body.email
+	}, function (error, user) {
+		if (user && user.authenticate(req.body.password)) {
+			res.cookie('user', user.hash);
 			res.status(204);
 			res.send();
 		} else {
@@ -17,11 +17,24 @@ router.put('/', function(req, res, next) {
 	});
 });
 
+router.get('/:hash', function(req, res, next) {
+	User.findOne({
+			hash: req.params.hash
+	}, function (error, user) {
+		if (user) {
+			res.json(user.details());
+		} else {
+			res.status(401);
+			res.send('User doesn\'t exist');
+		}
+	});
+});
+
 router.post('/', function(req, res, next) {
-	User.find({
+	User.findOne({
 		email: req.body.email
-	}, function (error, users) {
-		if (users.length) {
+	}, function (error, user) {
+		if (user) {
 			res.status(400);
 			res.send('User exist');
 		} else {
@@ -29,10 +42,7 @@ router.post('/', function(req, res, next) {
 				email: req.body.email,
 				password: req.body.password
 			})).save(function (error, user) {
-				/*
-					@TODO
-					set cookie
-				*/
+				res.cookie('user', user.hash);
 				res.status(204);
 				res.send();
 			});

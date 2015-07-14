@@ -3,6 +3,7 @@ require.config({
 		style: '../stylesheets',
 		angular: 'vendor/angular/angular',
 		ngRoute: 'vendor/angular-route/angular-route',
+		ngCookies: 'vendor/angular-cookies/angular-cookies',
 		jquery: 'vendor/jquery/dist/jquery',
 		bootstrap: 'vendor/bootstrap/dist/js/bootstrap',
 
@@ -16,6 +17,10 @@ require.config({
 		},
 
 		ngRoute: {
+			deps: ['angular']
+		},
+
+		ngCookies: {
 			deps: ['angular']
 		},
 

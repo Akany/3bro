@@ -10,6 +10,7 @@ define([
 	'./proxy/listProxy',
 	'./service/routeService',
 	'ngRoute',
+	'ngCookies',
 	'bootstrap'
 ], function (
 	ng,
@@ -24,7 +25,7 @@ define([
 ) {
 	'use strict';
 
-	ng.module('app', ['ngRoute'])
+	ng.module('app', ['ngRoute', 'ngCookies'])
 		.controller('loginController', loginController)
 		.controller('registrationController', registrationController)
 		.controller('addController', addController)

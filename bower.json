@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.5",
     "requirejs": "~2.1.18",
     "angular": "~1.4.2",
-    "require-css": "~0.1.8"
+    "require-css": "~0.1.8",
+    "angular-cookies": "~1.4.2"
   }
 }

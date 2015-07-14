@@ -2,33 +2,56 @@
 define(function () {
 	'use strict';
 
-	return ['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+	return ['$routeProvider', '$locationProvider',
+		function ($routeProvider, $locationProvider) {
+			var user;
 
-		$routeProvider
-			.when('/login', {
-				templateUrl: 'views/login.html',
-				controller: 'loginController as loginCtrl'
-			})
+			user = ['loginProxy', '$cookies', 'routeService', '$q',
+				function (loginProxy, $cookies, routeService, $q) {
+					var hash = $cookies.get('user'),
+						defer = $q.defer();
 
-			.when('/add', {
-				templateUrl: 'views/add.html',
-				controller: 'addController as addCtrl'
-			})
+					if (!hash) {
+						routeService.login();
+						defer.reject();
+					}
 
-			.when('/registration', {
-				templateUrl: 'views/registration.html',
-				controller: 'registrationController as registrationCtrl'
-			})
+					loginProxy.user(hash).then(defer.resolve, defer.reject);
 
-			.when('/list', {
-				templateUrl: 'views/list.html',
-				controller: 'listController as listCtrl'
-			})
+					return defer;
+				}];
 
-			.otherwise({
-				redirectTo: '/login'
-			});
+			$routeProvider
+				.when('/login', {
+					templateUrl: 'views/login.html',
+					controller: 'loginController as loginCtrl'
+				})
 
-			$locationProvider.html5Mode(true);
-	}]
-})
+				.when('/add', {
+					templateUrl: 'views/add.html',
+					controller: 'addController as addCtrl',
+					resolve: {
+						user: user
+					}
+				})
+
+				.when('/registration', {
+					templateUrl: 'views/registration.html',
+					controller: 'registrationController as registrationCtrl'
+				})
+
+				.when('/list', {
+					templateUrl: 'views/list.html',
+					controller: 'listController as listCtrl',
+					resolve: {
+						user: user
+					}
+				})
+
+				.otherwise({
+					redirectTo: '/add'
+				});
+
+				$locationProvider.html5Mode(true);
+		}];
+});
