@@ -9,9 +9,10 @@ money traking
 
 ###step 2
 * git clone https://github.com/Akany/3bro
-* npm install gulp -g
-* gulp install
+* npm intall -g bower
+* bower install
+
 
 
 ###run server
-* gulp start
+* node bin/www
