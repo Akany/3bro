@@ -6,6 +6,7 @@ money traking
 *  install git (apt-get install git)
 *  install node (apt-get install nodejs-legacy)
 *  install npm (linux only)
+*  install mongodb
 
 ###step 2
 * git clone https://github.com/Akany/3bro
@@ -15,4 +16,5 @@ money traking
 
 
 ###run server
+* run mongo
 * node bin/www
