@@ -14,7 +14,6 @@ var app = express();
 var mongoose = require('mongoose'),
     db = mongoose.connection;
 
-console.log(process.env.MONGOHQ_URL);
 mongoose.connect(process.env.MONGOHQ_URL);
 
 db.on('error', console.error.bind(console, 'connection error:'));

@@ -1,5 +1,7 @@
-extends layout
-
-block content
-  h1= 'TODO'
-  p= "Add loading mask"
+doctype html
+html
+  head
+    title= title
+    script(src='/javascripts/vendor/requirejs/require.js', data-main="javascripts/main")
+    base(href='/')
+  body(ng-view)
