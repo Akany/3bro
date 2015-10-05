@@ -9,6 +9,7 @@ define([
 	'./proxy/loginProxy',
 	'./proxy/listProxy',
 	'./service/routeService',
+	'css!style/style.css',
 	'ngRoute',
 	'ngCookies',
 	'bootstrap'

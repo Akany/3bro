@@ -1,15 +1,52 @@
 body {
+  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: url('/images/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
+  /*background-color: rgb(80%, 40%, 0%);*/
+  background-size: contain;
 }
 
 a {
   color: #00B7FF;
 }
 
-.login {
-	width: 300px;
-	margin-top: 30%;
-	margin-left: 85%;
+span.join-us {
+	margin-right: 20px;
+	margin: 15px;
+}
+
+.login-form {
+	margin-top: 10em;
+}
+
+@media(max-width: 400px) {
+	body {
+		background-image: url(../stylesheets/images/68724475.jpg);
+	}
+}
+
+@media(min-width: 400px) {
+	html {
+		background: url(../stylesheets/images/dog.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}
+
+	html body {
+		background-color: transparent;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+div.login-container{
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+@media only screen and (min-width: 480px) {
+	body {
+		margin-left: (@gutter / -2);
+		margin-right: (@gutter / -2);
+	}
 }

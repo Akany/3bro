@@ -1,16 +1,23 @@
-<div class="login">
-	<form name="loginForm">
+<div class="login-container">
+	<form name="loginForm" class="col-lg-3 login-form">
 		<div class="form-group">
 			<input type="email" class="form-control" placeholder="Email" ng-model="loginCtrl.email">
 		</div>
 		<div class="form-group">
 			<input type="password" class="form-control" placeholder="Password" ng-model="loginCtrl.password" required>
 		</div>
-		<button type="submit" class="btn btn-default" ng-click="loginCtrl.login()" ng-disabled="loginForm.$invalid || loginForm.$pristine">
-			Submit
-		</button>
-		<button type="submit" class="btn btn-default" ng-click="loginCtrl.toRegistration()">
-			Registrate
-		</button>
+		<div class="form-group">
+			<button class="form-control btn btn-primary" type="submit" ng-click="loginCtrl.login()" ng-disabled="loginForm.$invalid || loginForm.$pristine">
+				Submit
+			</button>
+		</div>
+		<div class="form-group">
+			<span class="pull-right join-us">
+				Wonna 
+				<a ng-click="loginCtrl.toRegistration()" href="">
+					Join us
+				</a>
+			</span>
+		</div>
 	</form>
 </div>
