@@ -15,11 +15,12 @@
   ],
   "directory": "public/javascripts/vendor",
   "dependencies": {
-    "angular-route": "~1.4.2",
-    "bootstrap": "~3.3.5",
-    "requirejs": "~2.1.18",
-    "angular": "~1.4.2",
-    "require-css": "~0.1.8",
-    "angular-cookies": "~1.4.2"
+    "angular-route": "1.4.*",
+    "bootstrap": "3.3.*",
+    "requirejs": "2.1.*",
+    "angular": "1.4.*",
+    "require-css": "0.1.*",
+    "angular-cookies": "1.4.*",
+    "angular-touch": "1.4.*"
   }
 }

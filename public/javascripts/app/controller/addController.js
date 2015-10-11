@@ -2,7 +2,7 @@
 define(function () {
 	'use strict';
 
-	return ['listProxy', function (proxy) {
+	return ['listProxy', 'routeService', function (proxy, routeService) {
 		var self = this;
 
 		self.categories = [{
@@ -33,15 +33,14 @@ define(function () {
 		}
 
 		self.add = function () {
-			/*
-				@TODO
-				add save request
-			*/
-
 			proxy.add({
 				category: self.category,
 				coast: self.coast
 			}).then(onSuccess, onFailure);
+		};
+
+		self.toList = function () {
+			routeService.list();
 		};
 	}];
 });

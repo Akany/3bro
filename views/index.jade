@@ -5,5 +5,4 @@ html
     link(href='stylesheets/style.css', rel='stylesheet')
     meta(content='width=device-width, initial-scale=1' name='viewport')
     base(href='/')
-  body
-    div(ng-view, class='container')
+  body(ng-view, class='container', ng-swipe-left="addCtrl.toList()" ng-swipe-right="listCtrl.toAdd()")

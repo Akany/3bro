@@ -4,6 +4,7 @@ require.config({
 		angular: 'vendor/angular/angular',
 		ngRoute: 'vendor/angular-route/angular-route',
 		ngCookies: 'vendor/angular-cookies/angular-cookies',
+		ngTouch: 'vendor/angular-touch/angular-touch',
 		jquery: 'vendor/jquery/dist/jquery',
 		bootstrap: 'vendor/bootstrap/dist/js/bootstrap',
 
@@ -21,6 +22,10 @@ require.config({
 		},
 
 		ngCookies: {
+			deps: ['angular']
+		},
+
+		ngTouch: {
 			deps: ['angular']
 		},
 

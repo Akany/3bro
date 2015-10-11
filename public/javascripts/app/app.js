@@ -12,6 +12,7 @@ define([
 	'css!style/style.css',
 	'ngRoute',
 	'ngCookies',
+	'ngTouch',
 	'bootstrap'
 ], function (
 	ng,
@@ -26,7 +27,7 @@ define([
 ) {
 	'use strict';
 
-	ng.module('app', ['ngRoute', 'ngCookies'])
+	ng.module('app', ['ngRoute', 'ngCookies', 'ngTouch'])
 		.controller('loginController', loginController)
 		.controller('registrationController', registrationController)
 		.controller('addController', addController)
