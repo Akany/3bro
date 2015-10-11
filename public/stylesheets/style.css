@@ -3,6 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /*background-color: rgb(80%, 40%, 0%);*/
   background-size: contain;
+
 }
 
 a {
@@ -18,20 +19,31 @@ span.join-us {
 	margin-top: 10em;
 }
 
-@media(max-width: 400px) {
-	body {
-		background-image: url(../stylesheets/images/68724475.jpg);
-	}
+html body {
+	background-color: transparent;
 }
 
-@media(min-width: 400px) {
+@media(max-width: 640px) {
 	html {
-		background: url(../stylesheets/images/dog.jpg) no-repeat center center fixed;
+		background: url(../stylesheets/images/00w.jpg) no-repeat left bottom fixed;
 		background-size: cover;
 	}
 
-	html body {
-		background-color: transparent;
+	div.container {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	form.login-form {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+@media(min-width: 640px) {
+	html {
+		background: url(../stylesheets/images/dog.jpg) no-repeat center center fixed;
+		background-size: cover;
 	}
 }
 
@@ -44,9 +56,3 @@ div.login-container{
 	margin-left: 15px;
 }
 
-@media only screen and (min-width: 480px) {
-	body {
-		margin-left: (@gutter / -2);
-		margin-right: (@gutter / -2);
-	}
-}
