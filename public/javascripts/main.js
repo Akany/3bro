@@ -4,7 +4,8 @@ require.config({
 		angular: 'vendor/angular/angular',
 		ngRoute: 'vendor/angular-route/angular-route',
 		ngCookies: 'vendor/angular-cookies/angular-cookies',
-		ngTouch: 'vendor/angular-touch/angular-touch',
+		'angular-hammer': 'vendor/ryanmullins-angular-hammer/angular.hammer',
+		hammerjs: 'vendor/hammerjs/hammer',
 		jquery: 'vendor/jquery/dist/jquery',
 		bootstrap: 'vendor/bootstrap/dist/js/bootstrap',
 
@@ -25,7 +26,7 @@ require.config({
 			deps: ['angular']
 		},
 
-		ngTouch: {
+		'angular-hammer': {
 			deps: ['angular']
 		},
 
