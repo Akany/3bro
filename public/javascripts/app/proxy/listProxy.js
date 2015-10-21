@@ -7,8 +7,10 @@ define(function () {
 			return $http.post('api/list', data);
 		};
 
-		this.get = function () {
-			return $http.get('api/list');
+		this.get = function (filter) {
+			return $http.get('api/list', {
+				params: filter
+			});
 		};
 
 	}];

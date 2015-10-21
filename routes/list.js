@@ -4,7 +4,18 @@ var express = require('express'),
 	User = require('../schema/user');
 
 router.get('/', function(req, res, next) {
-	List.find(function (error, items) {
+	var search = {},
+		query = req.query;
+
+	if (!isNaN(parseFloat(query.coast, 10))) {
+		search.coast = parseFloat(query.coast, 10);
+	}
+
+	if (query.category) {
+		search.category = query.category;
+	}
+
+	List.find(search, function (error, items) {
 		res.json(items);
 	});
 });

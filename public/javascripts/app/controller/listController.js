@@ -2,23 +2,38 @@
 define(function () {
 	'use strict';
 
-	return ['listProxy', 'routeService', function (proxy, routeService) {
-		var self = this;
+	return ['listProxy', 'routeService', 'categories',
+		function (proxy, routeService, categories) {
+			var self = this;
 
-		self.items = [];
+			self.items = [];
 
-		function onLoad(response) {
-			self.items = response.data;
-		}
+			self.filter = {
+				coast: undefined,
+				category: undefined
+			};
 
-		function load() {
-			proxy.get().then(onLoad);
-		}
+			self.categories = [{
+				name: 'Any category',
+				value: undefined
+			}].concat(categories);
 
-		self.toAdd = function () {
-			routeService.add();
-		};
+			function onLoad(response) {
+				self.items = response.data;
+			}
 
-		load();
-	}];
+			function load() {
+				proxy.get(self.filter).then(onLoad);
+			}
+
+			self.toAdd = function () {
+				routeService.add();
+			};
+
+			self.updateFilter = function () {
+				load();
+			};
+
+			load();
+		}];
 });

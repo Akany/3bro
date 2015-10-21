@@ -9,6 +9,7 @@ define([
 	'./proxy/loginProxy',
 	'./proxy/listProxy',
 	'./service/routeService',
+	'./constant/categories',
 	'css!style/style.css',
 	'ngRoute',
 	'ngCookies',
@@ -23,7 +24,8 @@ define([
 	listController,
 	loginProxy,
 	listProxy,
-	routeService
+	routeService,
+	categories
 ) {
 	'use strict';
 
@@ -35,6 +37,7 @@ define([
 		.service('loginProxy', loginProxy)
 		.service('listProxy', listProxy)
 		.service('routeService', routeService)
+		.constant('categories', categories)
 		.config(route);
 
 	ng.bootstrap(ng.element('body'), ['app']);

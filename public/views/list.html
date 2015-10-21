@@ -1,4 +1,19 @@
 <div class="container">
+	<div class="filters">
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="number" ng-min="0" ng-model="listCtrl.filter.coast" placeholder="by Coast" class="form-control" />
+			</div>
+			<div class="col-xs-12">
+				<select ng-options="category.value as category.name for category in listCtrl.categories" ng-model="listCtrl.filter.category" class="form-control"></select>
+			</div>
+		</div>
+		<div>
+			<button class="btn btn-primary pull-right" ng-click="listCtrl.updateFilter()">
+				Apply
+			</button>
+		</div>
+	</div>
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
