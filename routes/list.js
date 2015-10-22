@@ -7,12 +7,24 @@ router.get('/', function(req, res, next) {
 	var search = {},
 		query = req.query;
 
+	search.date = {
+		$lte: new Date()
+	};
+
 	if (!isNaN(parseFloat(query.coast, 10))) {
 		search.coast = parseFloat(query.coast, 10);
 	}
 
 	if (query.category) {
 		search.category = query.category;
+	}
+
+	if (new Date(query.from).toString() !== 'Invalid Date') {
+		search.date.$gte = new Date(query.from);
+	}
+
+	if (new Date(query.to).toString() !== 'Invalid Date') {
+		search.date.$lte = new Date(query.to);
 	}
 
 	List.find(search, function (error, items) {

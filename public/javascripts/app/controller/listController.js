@@ -1,5 +1,7 @@
 /*global define*/
-define(function () {
+define([
+	'moment'
+], function (moment) {
 	'use strict';
 
 	return ['listProxy', 'routeService', 'categories',
@@ -10,7 +12,9 @@ define(function () {
 
 			self.filter = {
 				coast: undefined,
-				category: undefined
+				category: undefined,
+				from: moment().startOf('month').toDate(),
+				to: moment().endOf('day').toDate()
 			};
 
 			self.categories = [{

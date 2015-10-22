@@ -8,6 +8,7 @@ require.config({
 		hammerjs: 'vendor/hammerjs/hammer',
 		jquery: 'vendor/jquery/dist/jquery',
 		bootstrap: 'vendor/bootstrap/dist/js/bootstrap',
+		moment: 'vendor/moment/moment',
 
 		css: 'vendor/require-css/css'
 	},
