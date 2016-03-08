@@ -7,7 +7,7 @@ router.put('/', function(req, res, next) {
 			email: req.body.email
 	}, function (error, user) {
 		if (user && user.authenticate(req.body.password)) {
-			res.cookie('user', user.hash);
+			res.cookie('user', user.hash, {maxAge: 1000 * 60 * 60 * 24 * 365});
 			res.status(204);
 			res.send();
 		} else {
