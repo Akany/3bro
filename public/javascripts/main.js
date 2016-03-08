@@ -40,5 +40,10 @@ require.config({
 		}
 	},
 
-	deps: ['app/app']
+	deps: ['app/app'],
+	callback: function () {
+		require(['angular'], function (ng) {
+			ng.bootstrap(ng.element('body'), ['app']);
+		});
+	}
 });

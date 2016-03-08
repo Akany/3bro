@@ -56,3 +56,49 @@ div.login-container{
 	margin-left: 15px;
 }
 
+.margin-bottom {
+	margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+.change-in {
+	animation-name: fadeIn;
+}
+
+.change-out {
+	animation-name: fadeOut;
+}
+
+.change-animation {
+	animation-duration: .25s;
+	animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0, 0.88, 0.61, 0.99);
+}
+
+.change-active {
+	transform: scale(0);
+}
+
+.inline-block {
+	display: inline-block;
+}
+

@@ -14,7 +14,8 @@ define([
 	'ngRoute',
 	'ngCookies',
 	'angular-hammer',
-	'bootstrap'
+	'bootstrap',
+	'./change-animation/change-animation.bundle'
 ], function (
 	ng,
 	route,
@@ -29,7 +30,7 @@ define([
 ) {
 	'use strict';
 
-	ng.module('app', ['ngRoute', 'ngCookies', 'hmTouchEvents'])
+	return ng.module('app', ['ngRoute', 'ngCookies', 'hmTouchEvents', 'change-animation'])
 		.controller('loginController', loginController)
 		.controller('registrationController', registrationController)
 		.controller('addController', addController)
@@ -39,6 +40,4 @@ define([
 		.service('routeService', routeService)
 		.constant('categories', categories)
 		.config(route);
-
-	ng.bootstrap(ng.element('body'), ['app']);
 });

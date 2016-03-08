@@ -22,6 +22,8 @@ define([
 				value: undefined
 			}].concat(categories);
 
+			self.getTotal = sum;
+
 			function onLoad(response) {
 				self.items = response.data;
 			}
@@ -39,5 +41,15 @@ define([
 			};
 
 			load();
+
+			function sum() {
+				var total = 0;
+
+				self.items.forEach(function (item) {
+					total = total + item.coast;
+				});
+
+				return total;
+			}
 		}];
 });
